@@ -12,7 +12,7 @@ triggers.forEach(e => e.addEventListener("click", toggle))
 window.onload = async function() {
 
   if (!localStorage.getItem("Chatos")) {
-    return window.db.login()
+    window.db.login()
   }
 
   $("body").css({
@@ -42,7 +42,7 @@ window.onload = async function() {
       "background-image": `url(${user.pfp})`
     })
   } else {
-    return window.db.login()
+    window.db.login()
   }
 
   window.userId = localStorage.getItem("Chatos")
