@@ -1,0 +1,611 @@
+:root {
+        --primary: #BB86FC;
+        --primary-v: #3700B3;
+        --secondry: #03DAC6;
+        --background: #0B0B0B;
+        --surface: #121212;
+        --error: #CF6679;
+        --on-p: #000000;
+        --on-s: #000000;
+        --on-b: #FFFFFF;
+        --on-su: #000000;
+        --on-e: #000000;
+}
+
+body {
+    font-size: 15pt;
+    background: var(--background);
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div, span, button, input, textarea, a {
+        list-style: none;
+        outline: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        user-select: none;
+}
+
+ul, li {
+        list-style: none;
+}
+
+.hover-1:hover {
+        background: rgba(255, 255, 255, 0.5);
+        transition: all 1s;
+}
+
+.hover-2:hover {
+        background: var(--surface);
+        transition: all 1s;
+}
+
+.center-1 {
+        justify-content: center;
+        align-items: center;
+}
+
+.center-2 {
+        top: 50%;
+        transform: translateY(-50%);
+}
+
+.center-3 {
+        left: 50%;
+        transform: translateX(-50%)
+}
+
+.italic {
+        font-style: italic;
+}
+
+.bold {
+        font-weight: bold;
+}
+
+.white {
+        color: white;
+}
+
+.header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        left: 0;
+        right: 0;
+        height: 50px;
+        display: block;
+        background: var(--surface);
+        margin: 0;
+        padding: 0;
+}
+
+.h-footbar {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 10px;
+        background-image: url(./src/menu.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+}
+
+.h-title {
+        color: cyan;
+        position: absolute;
+        bottom: -6px;
+        font-style: italic;
+        font-family: cursive;
+        font-size: 25pt;
+        left: 65px;
+}
+
+.h-avatar {
+        position: absolute;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50px;
+        background-size: contain;
+}
+
+.body {
+        width: 100%;
+        height: calc(100vh - 50px);
+        left: 0;
+        right: 0;
+        position: absolute;
+        overflow: hidden;
+        display: flex;
+        scroll-behavior: smooth;
+        top: 50px;
+}
+
+.section {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        position: relative;
+}
+
+/*#f-1 {
+        background: grey;
+}*/
+
+.f-1-can, .f-4-can {
+        width: 100%;
+        height: calc(100% - 40px);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+}
+
+.f-1-can-down, .f-4-can-down {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        bottom: 50px;
+        right: 10px;
+        background: var(--primary);
+        visibility: visible;
+        background-image: url(./src/bottom.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+}
+
+.f-45-can-down {
+        width: 50px;
+        height: 50px;
+        background: black;
+        position: absolute;
+        right: 10px;
+        top: 200px;
+}
+
+.f-1-key, .f-4-key {
+        width: 100%;
+        height: 40px;
+        background: var(--surface);
+        bottom: 0px;
+        display: flex;
+        position: absolute;
+}
+
+.f-1-keya, .f-4-keya {
+        height: 90%;
+        width: calc(100% - 85px);
+        position: absolute;
+        bottom: 0;
+        background: var(--surface);
+        color: white;
+        border: none;
+        padding-left: 10px;
+        display: flex;
+        left: 40px;
+}
+
+.f-1-keyb, .f-4-keyb {
+        height: 80%;
+        width: 40px;
+        background: var(--surface);
+        color: white;
+        border: none;
+        position: absolute;
+        right: 2px;
+        background-image: url(./src/send.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+}
+
+.f-1-keyp, .f-4-keyp {
+        display: flex;
+        width: 35px;
+        height: 80%;
+        background: var(--surface);
+        border: none;
+        position: absolute;
+        left: 5px;
+        background-image: url(./src/upload.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+}
+
+.f-1-keyp > input, .f-4-keyp > input {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 105%;
+        cursor: pointer;
+}
+
+.Gmsg, .Pmsg {
+        width: 100%;
+        display: flex;
+}
+
+.Gmsg3, .Pmsg3 {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        display: inline-block;
+}
+
+.Gmsg1, .Pmsg1 {
+        display: inline-block;
+        font-size: 10pt;
+        color: white;
+        flex-shrink: 0;
+        width: calc(100% - 50px);
+        
+}
+
+.Gmsg2, .Pmsg2 {
+        font-size: 11pt;
+}
+
+.Gmsg4, .Pmsg4 {
+        font-size: 5pt;
+        color: dimgrey;
+}
+
+.Gmsg5, .Pmsg5 {
+        display: block;
+        max-width: 90%;
+        overflow: hidden;
+        word-wrap: break-word;
+}
+
+.GmsgI, .PmsgI {
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        display: block;
+        border-radius: 10px;
+        
+}
+
+.GmsgEdit, .PmsgEdit {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        transition: 1s ease height;
+}
+
+.GmsgEdit-1, .PmsgEdit-1 {
+        width: 100%;
+        position: absolute;
+        right: 0;
+        left: 0;
+        background: var(--surface);
+        height: 50vh;
+        text-align: left;
+        bottom: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-top: 1px solid cyan;
+}
+
+.GmsgEdit .GmsgEdit-1 > div, .PmsgEdit .PmsgEdit-1 > div {
+        color: var(--secondry);
+        width: 100%;
+        font-style: italic;
+        padding: 5px;
+        border-radius: 5px;
+}
+
+.f-2-can {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+}
+
+.f-2-user {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        position: relative;
+}
+
+.f-2-pfp {
+        width: 50px;
+        height: 100%;
+        border-radius: 50%;
+}
+
+.f-2-username {
+        width: auto;
+        color: white;
+        font-size: 10pt;
+        position: absolute;
+        left: 55px;
+        top: 20%;
+}
+
+.f-2-chatf {
+        width: auto;
+        color: #FFFFFF;
+        position: absolute;
+        bottom: 18%;
+        left: 60px;
+        font-size: 8pt;
+}
+
+.f-2-add {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        bottom: 20px;
+        right: 5px;
+        background: var(--primary);
+        border-radius: 50%;
+        background-image: url(./src/add-user.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+}
+
+.f-2-add1 {
+        height: 100%;
+        width: 100%;
+        background: black;
+        position: absolute;
+}
+
+.f-2-add2 {
+        position: relative;
+        width: 90%;
+        height: 200px;
+        background: var(--primary-v);
+        border-radius: 25px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+}
+
+.f-2-add3 {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-image: url(./src/cancel.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+}
+
+.f-2-add4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        background: var(--secondry);
+        color: var(--primary-v);
+        padding-left: 5px;
+        border: 1px solid var(--primary-v);
+}
+
+.f-2-add5 {
+        width: 70px;
+        height: 20px;
+        border-radius: 25px;
+        background: var(--secondry);
+        color: var(--primary-v);
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 5pt;
+        text-align: center;
+        padding-top: 5px;
+}
+
+.f-2-add6 {
+        width: 100%;
+        height: 20px;
+        top: 38%;
+        font-size: 8pt;
+        position: absolute;
+        text-align: center;
+        color: red;
+        font-style: italic;
+        font-weight: bold;
+}
+
+.error {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        background: var(--primary-v);
+        border-bottom: 1px solid var(--secondry);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+}
+
+.error > span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--secondry);
+        font-size: 10pt;
+        font-style: italic;
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+}
+
+.footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        right: 0;
+        height: 0;
+        background: var(--surface);
+        display: flex;
+        border-top: 1px solid cyan;
+        overflow: hidden;
+        transition: 1s ease height;
+}
+
+.footer-1 {
+        height: 50px;
+}
+
+.f-can {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        text-align: center;
+}
+
+.f-icon {
+        width: calc(100% / 2);
+        height: 100%;
+        display: flex;
+        transition: all 1s;
+        border-radius: 25px;
+}
+
+.f-icon.active {
+        box-shadow: var(--primary-v) 0 20px 40px -4px;
+}
+
+.f-icon.active .f-i {
+        transform: translateY(-10px) scale(1);
+}
+
+.f-1 {
+        background-image: url(./src/globe.png);
+}
+
+.f-2 {
+        background-image: url(./src/chat.png);
+}
+
+.f-i {
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: all 1s;
+}
+
+
+
+
+.login1 {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary-v);
+        left: 0;
+        right: 0;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+}
+
+.login2 {
+        width: 300px;
+        background-color: var(--primary);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 25px;
+        text-align: center;
+}
+
+.loginN {
+        width: 100%;
+        color: var(--col4);
+        font-style: italic;
+        font-family: cursive;
+        font-size: 20pt;
+}
+
+.loginor {
+        width: 100%;
+        font-size: 5pt;
+        color: var(--on-p);
+        border-bottom: 1px solid var(--col4);
+        margin-bottom: 20px;
+}
+
+.loginU, .loginE, .loginP {
+        background: var(--primary);
+        color: white;
+        font-size: 10pt;
+        padding: 10px;
+        border: 1px solid var(--secondry);
+        border-radius: 5px;
+}
+
+.loginS {
+        width: 100px;
+        padding: 5px;
+        border-radius: 25px;
+        color: white;
+        background: var(--primary-v);
+        border: 1px solid var(--secondry);
+        margin-top: 55px;
+        margin-bottom: 50px;
+}
+
+.loginS:hover {
+        animation: swing ease-in-out 0.5s 1
+}
+
+.showpass {
+        font-size: 5pt;
+        color: var(--col4);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding-left: 25px;
+}
+
+.showpass:hover {
+        animation: swing ease-in-out 0.5s 1
+}
+
+
+@keyframes swing {
+
+        0%,
+        30%,
+        50%,
+        70%,
+        100% {
+                transform: rotate(0deg);
+        }
+
+        10% {
+                transform: rotate(10deg);
+        }
+
+        40% {
+                transform: rotate(-10deg);
+        }
+
+        60% {
+                transform: rotate(5deg);
+        }
+
+        80% {
+                transform: rotate(-5deg);
+        }
+}
