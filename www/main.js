@@ -10,8 +10,14 @@ triggers.forEach(e => e.addEventListener("click", toggle))
 
 
 window.onload = async function() {
+
+  if (!localStorage.getItem("Chatos")) {
+    return window.db.login()
+  }
+
   $("body").css({
-    height: window.innerHeight, width: window.innerWidth
+    height: window.innerHeight,
+    width: window.innerWidth
   })
 
   $("#lol").click(function() {
@@ -24,7 +30,8 @@ window.onload = async function() {
 
   setTimeout(() => {
     $("#lol").click()
-  }, 2000)
+  },
+    2000)
 
   window.db.initDb()
 

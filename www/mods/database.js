@@ -12,8 +12,10 @@ import {
   query,
   equalTo,
   onChildRemoved,
-  update
+  update,
+  onValue
 } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+
 import {
   setPChatter
 } from "./Pchat.js"
@@ -189,6 +191,16 @@ class Database {
 
   initDb() {
     this.db = getDatabase(initializeApp(this.key()))
+
+    const connectedRef = ref(this.db, ".info/connected");
+    onValue(connectedRef, (snap) => {
+      if (snap.val() === true) {
+        //connected
+      } else {
+        window.db.err("If Not Loaded, check your connection!")
+      }
+    });
+
     return this.ref = ref(this.db)
   }
 
