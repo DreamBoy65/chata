@@ -10,7 +10,7 @@ import {
   equalTo,
   onChildRemoved,
   update
-} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+} from "./firebase-database.js";
 let Pline;
 let first = true;
 

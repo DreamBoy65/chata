@@ -1,6 +1,6 @@
 import {
   initializeApp
-} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+} from "./firebase-app.js";
 import {
   getDatabase,
   ref,
@@ -14,7 +14,7 @@ import {
   onChildRemoved,
   update,
   onValue
-} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+} from "./firebase-database.js";
 
 import {
   setPChatter

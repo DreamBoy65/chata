@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
   <title>Chatos</title>
 
   <!-- HTML -->
@@ -111,7 +111,7 @@
   </div>
 
   <!-- Project -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script type="module" src="./mods/jquery-3.6.0.js"></script>
   <script type="module" src="./main.js"></script>
   <script type="module" src="./mods/globalChat.js"></script>
 </body>

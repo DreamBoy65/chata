@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Chatos</name>
+  <description>
+    AChat app.
+  </description>
+  <author email="rajpootpratham904@gmail.com" href="http:/lovalhsky.com">
+    Dream
+  </author>
+  <content src="index.html" />
+  <access origin="*" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+  <allow-intent href="*" />
+  <allow-navigation href="*" />
+  <platform name="android">
+    <allow-intent href="market:*" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="KeepRunning" value="false" />
+    <preference name="LoadUrlTimeoutValue" value="10000" />
+    <preference name="InAppBrowserStorageEnabled" value="true" />
+    <preference name="Orientation" value="portrait" />
+  </platform>
+  <platform name="ios">
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
+  </platform>
+</widget>
