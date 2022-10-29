@@ -10,7 +10,7 @@ triggers.forEach(e => e.addEventListener("click", toggle))
 
 
 window.onload = async function() {
-
+  console.log("Started!")
   if (!localStorage.getItem("Chatos")) {
     window.db.login()
   }
