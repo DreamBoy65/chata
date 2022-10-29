@@ -1,6 +1,6 @@
 import {
   initializeApp
-} from "./firebase-app.js";
+} from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
 import {
   getDatabase,
   ref,
@@ -14,12 +14,12 @@ import {
   onChildRemoved,
   update,
   onValue
-} from "./firebase-database.js";
+} from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
 
-import {
+/* import {
   setPChatter
 } from "./Pchat.js"
-
+ */
 class Database {
   constructor() {
     window.db = this
@@ -28,7 +28,7 @@ class Database {
   }
 
   async setUpPchat() {
-    await setPChatter()
+    // await setPChatter()
   }
 
   async getUser(id) {

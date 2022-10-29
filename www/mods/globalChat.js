@@ -10,7 +10,7 @@ import {
   equalTo,
   onChildRemoved,
   update
-} from "./firebase-database.js";
+} from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
 
 async function setGchat() {
 
@@ -127,6 +127,4 @@ async function setGchat() {
 
 }
 
-export {
-  setGchat
-}
+//export default setGchat

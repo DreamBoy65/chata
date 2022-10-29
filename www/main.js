@@ -1,19 +1,16 @@
-import Database from "./mods/database.js"
-new Database()
-
-import {
-  setGchat
-} from "./mods/globalChat.js"
-
-let triggers = document.querySelectorAll(".f-icon")
-triggers.forEach(e => e.addEventListener("click", toggle))
-
-
 window.onload = async function() {
   console.log("Started!")
   if (!localStorage.getItem("Chatos")) {
     window.db.login()
   }
+
+  import Database from "./mods/database.js"
+
+  new Database()
+  let triggers = document.querySelectorAll(".f-icon")
+  triggers.forEach(e => e.addEventListener("click", toggle))
+
+
 
   $("body").css({
     height: window.innerHeight,
@@ -47,7 +44,8 @@ window.onload = async function() {
 
   window.userId = localStorage.getItem("Chatos")
 
-  await window.db.setUpPchat()
+  //await window.db.setUpPchat()
+  console.log(setGchat)
   await setGchat()
 }
 
