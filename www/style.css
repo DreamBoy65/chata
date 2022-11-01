@@ -114,7 +114,7 @@ ul, li {
 
 .body {
         width: 100%;
-        height: calc(100vh - 50px);
+        height: calc(100% - 50px);
         left: 0;
         right: 0;
         position: absolute;

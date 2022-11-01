@@ -249,6 +249,8 @@ class Database {
         pass: $(".loginP").val()
       }
 
+      console.log(data)
+
       let puser = await window.db.findUser(data.name)
 
       if (!puser) {

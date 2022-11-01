@@ -1,21 +1,31 @@
-window.onload = async function() {
+import Database from "./mods/database.js"
+import setGchat from "./mods/globalChat.js"
+import setPChatter from "./mods/Pchat.js"
+new Database()
+
+document.addEventListener("DOMContentLoaded", async function() {
   console.log("Started!")
+
   if (!localStorage.getItem("Chatos")) {
     window.db.login()
   }
 
-  import Database from "./mods/database.js"
+  const triggers = document.querySelectorAll(".f-icon")
+  triggers.forEach(e => e.addEventListener("click", function() {
+    triggers.forEach(e => this != e ? e.classList.remove("active"): null)
 
-  new Database()
-  let triggers = document.querySelectorAll(".f-icon")
-  triggers.forEach(e => e.addEventListener("click", toggle))
+    if (this.classList != "active") {
+      this.classList.toggle("active")
+    }
+
+    $(".footer").toggleClass("footer-1")
+  }))
 
 
-
-  $("body").css({
+  /* $("body").css({
     height: window.innerHeight,
     width: window.innerWidth
-  })
+  })*/
 
   $("#lol").click(function() {
     launchFullScreen(document.body)
@@ -26,7 +36,7 @@ window.onload = async function() {
   })
 
   setTimeout(() => {
-    $("#lol").click()
+    //  $("#lol").click()
   },
     2000)
 
@@ -45,20 +55,9 @@ window.onload = async function() {
   window.userId = localStorage.getItem("Chatos")
 
   //await window.db.setUpPchat()
-  console.log(setGchat)
+  await setPChatter()
   await setGchat()
-}
-
-
-function toggle() {
-  triggers.forEach(e => e != this ? e.classList.remove("active"): null)
-
-  if (this.classList != "active") {
-    this.classList.toggle("active")
-  }
-
-  $(".footer").toggleClass("footer-1")
-}
+})
 
 function launchFullScreen(element) {
   if (element.requestFullScreen) {

@@ -127,4 +127,4 @@ async function setGchat() {
 
 }
 
-//export default setGchat
+export default setGchat

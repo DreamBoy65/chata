@@ -20,8 +20,8 @@
   <platform name="android">
     <allow-intent href="market:*" />
     <preference name="Fullscreen" value="true" />
-    <preference name="KeepRunning" value="false" />
-    <preference name="LoadUrlTimeoutValue" value="10000" />
+    <preference name="KeepRunning" value="true" />
+    <preference name="LoadUrlTimeoutValue" value="100000" />
     <preference name="InAppBrowserStorageEnabled" value="true" />
     <preference name="Orientation" value="portrait" />
   </platform>
