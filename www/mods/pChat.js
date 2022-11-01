@@ -240,7 +240,6 @@ async function setPChatter() {
 
       setTimeout(async () => {
         let use = await window.db.getLinePchat(input)
-        console.log(use)
 
         if (use) {
           window.db.err("User is already in you chatbox!")
@@ -259,6 +258,4 @@ async function setPChatter() {
     })
   })
 }
-export {
-  setPChatter
-}
+export default setPChatter
